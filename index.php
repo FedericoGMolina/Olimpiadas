@@ -72,7 +72,7 @@
             if(isset($_GET['view']))
             {
                 $content=$_GET['view'];
-                $WhiteList=["rpw, inicio"];
+                $WhiteList=["rpw", "inicio", "ingreso"];
 
                 if(in_array($content, $WhiteList) && is_file("./views/".$content."-view.php"))
                 {
