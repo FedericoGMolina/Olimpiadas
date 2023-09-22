@@ -83,14 +83,13 @@
                     ?>
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-4">
-                                <img src="./img/Stop.png" alt="Image" class="img-responsive"/><br>
-                                <img src="./img/SadTux.png" alt="Image" class="img-responsive"/>
-                            </div>
-                            <div class="col-sm-7 text-center">
+                        <div class="text-center">
                                 <h1 class="text-danger">Lo sentimos, la opción que ha seleccionado no se encuentra disponible</h1>
                                 <h3 class="text-info">Por favor intente nuevamente</h3>
                             </div>
+                                <img src="./Inicio/Imagenes/corazonOffline.png" alt="Image" class="img-responsive"/><br>
+
+                 
                             <div class="col-sm-1">&nbsp;</div>
                         </div>
                     </div>
