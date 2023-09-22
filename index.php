@@ -48,7 +48,7 @@
 <head>
     <meta charset="UTF-8"> <!-- Configura la codificación de caracteres a UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Establece las propiedades de la ventana gráfica para dispositivos móviles -->
-    <title>HOLA :)</title> <!-- Establece el título de la página en la barra de título del navegador -->
+    <title>Login</title> <!-- Establece el título de la página en la barra de título del navegador -->
     <?php include "./config/links.php"; ?>
     <?php if (!empty($message)) : ?>
     <p class="message"></p>
