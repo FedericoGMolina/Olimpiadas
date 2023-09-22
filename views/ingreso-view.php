@@ -1,3 +1,3 @@
 <div>
-    <input></input>
+    <input class="form-control"></input>
 </div>
