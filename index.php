@@ -44,7 +44,7 @@
 
 
 <!DOCTYPE html> <!-- Declara el tipo de documento como HTML5 -->
-<html lang="en"> <!-- Define el idioma de la página como inglés (en) -->
+<html lang="es"> <!-- Define el idioma de la página como español (es) -->
 <head>
     <meta charset="UTF-8"> <!-- Configura la codificación de caracteres a UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Establece las propiedades de la ventana gráfica para dispositivos móviles -->
@@ -103,9 +103,6 @@
         ?>
 </div>
   
-
-    <!-- Incluye el archivo JavaScript de Bootstrap desde un CDN -->
-
 </body>
 
 </html>
