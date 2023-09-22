@@ -1,0 +1,49 @@
+
+* /* Todo */
+{
+    padding: 0;
+    margin: 0;
+}
+
+/* Bloques de navegación */
+    .card-title
+    {
+        text-align: center; /* Alinear texto en el centro */
+    }
+    .card 
+    {
+        /* ... Otros estilos de la tarjeta ... */
+        border: none; /* Elimina el borde actual */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Agrega una sombra suave */
+        transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s; /* Transiciones */
+        margin-bottom: 15px;
+    }
+    @media (min-width: 768px) /* Computadora */
+    {
+        .card:hover 
+        {
+            transform: scale(1.05);
+            background-color:gainsboro;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+        } /* Cambia el tamaño al 105% en hover */
+
+    }
+    @media (max-width: 768px) /* Celulares */
+    {
+        .card
+        {
+            height: 90%;
+            width: 100%;
+            margin: auto;
+            padding: auto;
+        }
+        .card img
+        {
+            height: 70%;
+        }
+    }
+    .card:active
+    {
+        background-color: #f0f0f0;
+    }
+/* Bloques de navegación */
