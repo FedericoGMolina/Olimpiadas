@@ -44,8 +44,6 @@ if (isset($_POST['registerButton']))
     <?php if (!empty($message)) : ?>
         <p class="message"><?= $message?></p>
     <?php endif;?>
-    <!-- Incluye el archivo de hojas de estilo personalizado (styles-index.css) -->
-    <link rel="stylesheet" href="styles-index.css">
     <!-- Incluye el archivo CSS de Bootstrap 5.3.2 desde un CDN (Content Delivery Network) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 

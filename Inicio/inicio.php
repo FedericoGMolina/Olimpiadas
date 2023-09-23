@@ -11,7 +11,6 @@
     <!-- Incluye el archivo CSS de Bootstrap 5.3.2 desde un CDN (Content Delivery Network) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Incluye un archivo de hojas de estilo personalizado (styles-inicio.css) -->
-    <link rel="stylesheet" href="styles-inicio.css">
     <!-- Define un icono para la pestaña del navegador -->
     <link rel="shortcut icon" href="Imagenes/cruz-azul.png" type="image/x-icon">
 </head>
@@ -40,7 +39,7 @@
                         <p class="mt-2">Acceso a la gestión de ingresos</p>
                         <!-- Cuerpo de la caja con el título -->
                         <div class="card-body">
-                            <h4 class="card-title">Ingresos</h4>
+                            <h4 class="card-title" id="titleIngresos">Ingresos</h4>
                         </div>
                     </div>
                 </a>
@@ -53,7 +52,7 @@
                         <img src="Imagenes/Hospital.jpg" class="card-img-top" alt="Portada del juego 2">
                         <p class="mt-2">Acceso a la gestión de pacientes</p>
                         <div class="card-body">
-                            <h4 class="card-title">Pacientes</h4>
+                            <h4 class="card-title" id"">Pacientes</h4>
                         </div>
                     </div>
                 </a>

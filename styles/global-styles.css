@@ -1,0 +1,177 @@
+/*REPORTES.PHP*/
+    #idReportes .login-form
+    {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #idReportes.img-fluid 
+    {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #idReportes img 
+    {
+        max-width: 100%; /* Asegura que la imagen no se desborde del div */
+        max-height: 100%; /* Asegura que la imagen no se desborde del div */
+        vertical-align: middle; /* Centra verticalmente la imagen */
+    }
+/*REPORTES.PHP*/
+
+
+
+/*INICIO.PHP*/
+
+    /* Bloques de navegación */
+        #idInicio .card-title
+        {
+            text-align: center; /* Alinear texto en el centro */
+        }
+        #idInicio .card 
+        {
+            /* ... Otros estilos de la tarjeta ... */
+            border: none; /* Elimina el borde actual */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Agrega una sombra suave */
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s; /* Transiciones */
+            margin-bottom: 15px;
+        }
+        @media (min-width: 768px) /* Computadora */
+        {
+            #idInicio .card:hover 
+            {
+                transform: scale(1.05);
+                background-color:gainsboro;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+            } /* Cambia el tamaño al 105% en hover */
+        }
+        @media (max-width: 768px) /* Celulares */
+        {
+            #idInicio .card
+            {
+                height: 90%;
+                width: 100%;
+                margin: auto;
+                padding: auto;
+            }
+            #idInicio .card img
+            {
+                height: 70%;
+            }
+        }
+        #idInicio .card:active
+        {
+            background-color: #f0f0f0;
+        }
+    /* Bloques de navegación */
+
+/*INICIO.PHP*/
+
+
+/*INDEX.PHP*/
+@media (min-width: 768px) /* Media query para pantallas grandes (computadoras) */
+{
+    #idIndex #loginForm
+    {
+        width: 400px; /* Ancho del formulario */
+        margin: auto; /* Centra el formulario en el centro de la pantalla */
+    }
+    #idIndex input
+    {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Agrega una sombra a los campos de entrada */
+        height: 70px; /* Establece la altura de los campos de entrada */
+    }
+    #idIndex label
+    {
+        font-weight:bold; /* Establece negrita para las etiquetas */
+        font-size: 25px; /* Establece el tamaño de fuente para las etiquetas */
+        color:black; /* Establece el color de texto de las etiquetas */
+        border-radius: 5px; /* Agrega bordes redondeados a las etiquetas */
+    }
+    #idIndex  #registerForm
+    {
+        width: 400px; /* Ancho del formulario */
+        margin: auto; /* Centra el formulario en el centro de la pantalla */
+    }
+}
+
+@media (max-width: 768px) /* Media query para pantallas pequeñas (celulares) */
+{
+    #idIndex  #loginForm
+    {
+        height: auto; /* Altura automática para el formulario */
+        width: auto; /* Ancho automático para el formulario */
+    } 
+    #idIndex  input
+    {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Agrega una sombra a los campos de entrada */
+        height: 70px; /* Establece la altura de los campos de entrada */
+    }
+    #idIndex  body
+    {
+        backdrop-filter: blur(10px); /* Aplica un efecto de desenfoque al fondo del cuerpo */
+        background-size: cover;
+        height: 100vh; /* 100% del alto de la ventana (viewport height) */
+        margin: 0; /* Sin márgenes */
+        padding: 0; /* Sin relleno */
+    }
+    #idIndex  label
+    {
+        font-weight:bold; /* Establece negrita para las etiquetas */
+        border-radius: 8px; /* Agrega bordes redondeados a las etiquetas */
+        padding: 5px; /* Agrega un espacio de relleno alrededor de las etiquetas */
+        font-size: 25px; /* Establece el tamaño de fuente para las etiquetas */
+    }
+    #idIndex  #registerForm
+    {
+        height: auto; /* Altura automática para el formulario */
+        width: auto; /* Ancho automático para el formulario */
+    }
+    #idIndex #texto
+    {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Agrega una sombra a los campos de entrada */
+
+    }
+}
+
+body
+{
+    background-image: url("../imagenes/fondo.jpg"); /* Establece una imagen de fondo para el cuerpo */
+    background-size: 100%; /* Ajusta el tamaño de la imagen de fondo al 100% de la ventana gráfica */
+}
+
+@keyframes latidos /*Creación de animación de latidos para el corazon*/
+{
+    from { transform: none; }
+    50% { transform: scale(1.1); }
+    to { transform: none; }
+}
+
+#idIndex #corazon
+{
+    animation: latidos 4s infinite; /* Aplica una animación de latidos par el corazon' */
+    transform-origin: center; /* Establece el punto de origen de la transformación en el centro del elemento */
+}
+
+/*INDEX.PHP*/
+
+/*INGRESO.PHP*/
+#idIngreso input
+{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Agrega una sombra a los campos de entrada */
+}
+#idIngreso select
+{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Agrega una sombra a los campos de entrada */
+}
+#idIngreso textarea
+{    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Agrega una sombra a los campos de entrada */
+}
+#idIngreso #btnGenero label
+{
+    margin-bottom: 50px;
+}
+/*INGRESO.PHP*/    
