@@ -28,7 +28,7 @@
 
             <!-- Caja 2 -->
             <div class="col-md-4 col-sm-12 mt-2">
-                <a href="Página-Pacientes/Pacientes.html" class="text-decoration-none">
+                <a href="index.php?view=pacientes" class="text-decoration-none">
                     <div class="card text-center">
                         <img src="Imagenes/Paciente.png" class="card-img-top" alt="Portada del juego 2">
                         <p class="mt-2">Acceso a la gestión de pacientes</p>
@@ -42,10 +42,10 @@
             <!-- Caja 3 -->
             <div class="col-md-4 col-sm-12 mt-2">
 
-                <a href="link_a_mas_informacion.html" class="text-decoration-none">
+                <a href="index.php?view=reportes" class="text-decoration-none">
                     <div class="card text-center">
                         <img src="Imagenes/Report.png" class="card-img-top" alt="Portada del juego 3">
-                        <p class="mt-2">Acceso a la gestión de ingresos</p>
+                        <p class="mt-2">Acceso a la gestión de reportes</p>
                         <div class="card-body">
                             <h4 class="card-title">Reportes</h4>
                         </div>

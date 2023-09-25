@@ -16,6 +16,7 @@
         $_SESSION['usuario'] = $reg['usuario'];
         $_SESSION['idRol'] = $reg['idRol'];
         $_SESSION['nombre'] = $regPersona['nombre'];
+        $_SESSION['legajo'] = intval($reg['legajo']);
         $status='OK';
     }
     else

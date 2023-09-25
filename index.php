@@ -1,5 +1,7 @@
 <?php
     session_start(); // Iniciar la sesión
+    include './config/class_mysql.php';
+    include './config/db.php';
 ?>
 
 
@@ -13,8 +15,10 @@
     <?php include "./config/links.php";?>
 
 </head>
+
+
+<body class="col-12">
 <?php include "./inc/navbar.php";?>
-<body class="container">
 
 <div id="content">
 
@@ -56,5 +60,6 @@
 </div>
   
 </body>
+
 
 </html>

@@ -1,6 +1,3 @@
-  <!--Css (Temporal)-->
-<link rel="stylesheet" href="./styles/global-styles.css">
-
   <!-- Sweet Alert Library -->
 <script src="sweetalert2.min.js"></script>
     <!-- Incluye el archivo CSS de Bootstrap 5.3.2 desde un CDN (Content Delivery Network) -->
@@ -14,3 +11,13 @@
 <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<!--Css (Temporal)-->
+<link rel="stylesheet" href="./styles/global-styles.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+
+<!-- Tests LINKS -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>

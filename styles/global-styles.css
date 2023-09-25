@@ -96,7 +96,6 @@
         margin: auto; /* Centra el formulario en el centro de la pantalla */
     }
 }
-
 @media (max-width: 768px) /* Media query para pantallas pequeñas (celulares) */
 {
     #idIndex  #loginForm
@@ -109,7 +108,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Agrega una sombra a los campos de entrada */
         height: 70px; /* Establece la altura de los campos de entrada */
     }
-    #idIndex  body
+     #idIndex body
     {
         backdrop-filter: blur(10px); /* Aplica un efecto de desenfoque al fondo del cuerpo */
         background-size: cover;
@@ -139,7 +138,6 @@
 body
 {
     background-image: url("../imagenes/fondo.jpg"); /* Establece una imagen de fondo para el cuerpo */
-    background-size: 100%; /* Ajusta el tamaño de la imagen de fondo al 100% de la ventana gráfica */
 }
 
 @keyframes latidos /*Creación de animación de latidos para el corazon*/
@@ -160,18 +158,114 @@ body
 /*INGRESO.PHP*/
 #idIngreso input
 {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Agrega una sombra a los campos de entrada */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Agrega una sombra a los campos de entrada */
 }
 #idIngreso select
 {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Agrega una sombra a los campos de entrada */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Agrega una sombra a los campos de entrada */
 }
 #idIngreso textarea
 {    
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Agrega una sombra a los campos de entrada */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Agrega una sombra a los campos de entrada */
 }
-#idIngreso #btnGenero label
+#idIngreso span
 {
-    margin-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Agrega una sombra a los campos de entrada */
+}
+
+@media (min-width: 768px) /* Media query para pantallas grandes (computadoras) */
+{
+    #idIngreso #fNacbox
+    {
+        width:415px
+    }
+    #idIngreso #oSbox
+    {
+        margin-left:7px;
+        width:415px;
+    }
+    #idIngreso #tIngresobox
+    {
+        width:408px;
+    }
+
+}
+@media (max-width: 768px) /* Media query para pantallas pequeñas (celulares) */
+{
+    #idIngreso #fNacbox
+    {
+        width:389px;
+    }
+    #idIngreso #oSbox
+    {
+        width:389px;
+    }
 }
 /*INGRESO.PHP*/    
+
+
+/*pADMIN.PHP*/
+
+/*pADMIN.PHP*/
+
+/*PACIENTES.PHP*/
+@media (min-width: 768px) /* Media query para pantallas grandes (computadoras) */
+{
+
+
+}
+@media (max-width: 768px) /* Media query para pantallas pequeñas (celulares) */
+{
+
+}
+  #idPacientesTabla table 
+  {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  #idPacientesTabla th, td 
+  {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd; /* Agregar bordes a las celdas */
+  }
+
+  #idPacientesTabla th 
+  {
+    background-color: #007BFF;
+    color: #fff;
+  }
+
+  #idPacientesTabla tr:nth-child(even) 
+  {
+    background-color: #f2f2f2;
+  }
+
+  #idPacientesTabla tr:hover 
+  {
+    background-color: #ddd;
+  }
+
+  #idPacientesTabla td:last-child 
+  {
+    font-weight: bold;
+  }
+  #idPacientes select
+  {
+    background-color:white;
+    color:black;
+  }
+  #idPacientes #inputModel
+  {
+    background-color:white;
+  }
+/*PACIENTES.PHP*/
+
+/*REPORTES.PHP*/
+#miplot
+{
+    background-color: red;
+}
+/*REPORTES.PHP*/
