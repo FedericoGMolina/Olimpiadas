@@ -1,3 +1,8 @@
+#fondoGeneral {
+    background-image: url("../Imagenes/fondo.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}
 /*REPORTES.PHP*/
     #idReportes .login-form
     {
@@ -73,6 +78,7 @@
 /*INDEX.PHP*/
 @media (min-width: 768px) /* Media query para pantallas grandes (computadoras) */
 {
+
     #idIndex #loginForm
     {
         width: 400px; /* Ancho del formulario */
@@ -135,10 +141,7 @@
     }
 }
 
-body
-{
-    background-image: url("../imagenes/fondo.jpg"); /* Establece una imagen de fondo para el cuerpo */
-}
+
 
 @keyframes latidos /*Creación de animación de latidos para el corazon*/
 {
@@ -264,8 +267,8 @@ body
 /*PACIENTES.PHP*/
 
 /*REPORTES.PHP*/
-#miplot
-{
-    background-color: red;
+#miplot {
+    width: 100%;
+    background-color: transparent; /* Establece el fondo transparente */
 }
 /*REPORTES.PHP*/

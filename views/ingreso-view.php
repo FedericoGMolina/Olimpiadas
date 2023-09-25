@@ -34,9 +34,9 @@
                 <span class="input-group-text" id="basic-addon1">Genero</span>
                     <select class="form-select mx-auto text-center" name="genero" id="genero">
                         <option value="" selected>Seleccionar una opción</option>
-                        <option value="hombre">Masculino</option>
-                        <option value="mujer">Femenino</option>
-                        <option value="noBinario">No Binario</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="No Binario">No Binario</option>
                     </select>
             </div>
         </div>

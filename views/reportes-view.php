@@ -30,8 +30,8 @@ if ($resultado->num_rows > 0) {
 $conn->close();
 ?>
 
-<div id="miplot" style="width:100%;"></div>
-
+<div id="miplot" style="width:50%;"></div>
+<div id="miplot2" style="width:50%;"></div>
 <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="bi bi-pencil-square"></i></a>
 <div id="idPersonaValue"></div>
 <div class="modal" id="myModal">
@@ -75,6 +75,7 @@ $conn->close();
 
 
 
+
 <!-- Resto de tu HTML y modal -->
 <script>
     document.getElementById("saveChanges").addEventListener("click", function () {
@@ -85,13 +86,53 @@ $conn->close();
         document.getElementById("idPersonaValue").textContent = mensaje;
     });
 
-    //*** Gráficos (Plotly JS) ***// 
-    const arrayx = ["Emergencia", "Normales", "Mujeres", "Hombres", "x"];
-    const arrayy = ["12", "12", "15", "20", "24"];
+    $.ajax({
+            url: "./process/estadisticas/consultaGenero.php", // Archivo PHP para la consulta a la base de datos
+            method: "POST",
+            dataType: "json",
+            success: function(data) {
+                  //*** Gráficos (Plotly JS) ***// 
+                    const arrayx = ["Mujeres", "Hombres", "No Binario"];
+                    const arrayy = [data.Femenino, data.Masculino, data.NoBinario];
 
-    const titulo = {title: "Stock de Productos"};
+                    const datos = [{labels: arrayx, values: arrayy, type:"pie",}];
+                    const layout = {
+                                    title: "Estadistica de genero de personas",
+                                    paper_bgcolor: "transparent", // Establece el fondo del gráfico como transparente
+                                    plot_bgcolor: "transparent", // Establece el fondo del área de trazado como transparente
+                                };
 
-    const datos = [{labels: arrayx, values: arrayy, type:"pie"}];
+                    
+            Plotly.newPlot("miplot", datos, layout);
+            },
+            error: function() {
+                alert('Error en la solicitud AJAX');
+            }
+        });
 
-    Plotly.newPlot("miplot", datos, titulo);
+        $.ajax({
+            url: "./process/estadisticas/consultaGenero.php", // Archivo PHP para la consulta a la base de datos
+            method: "POST",
+            dataType: "json",
+            success: function(data) {
+                  //*** Gráficos (Plotly JS) ***// 
+                    const arrayx = ["Mujeres", "Hombres", "No Binario"];
+                    const arrayy = [data.Femenino, data.Masculino, data.NoBinario];
+
+                    const datos = [{labels: arrayx, values: arrayy, type:"pie",}];
+                    const layout = {
+                                    title: "Estadistica de genero de personas",
+                                    paper_bgcolor: "transparent", // Establece el fondo del gráfico como transparente
+                                    plot_bgcolor: "transparent", // Establece el fondo del área de trazado como transparente
+                                };
+
+                    
+            Plotly.newPlot("miplot2", datos, layout);
+            },
+            error: function() {
+                alert('Error en la solicitud AJAX');
+            }
+        });
+
+
 </script>

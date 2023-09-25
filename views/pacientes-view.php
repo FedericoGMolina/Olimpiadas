@@ -67,8 +67,8 @@
 </html>
 <div id="idPacientesTabla">
 <h1 class="container text-center">Tabla de Pacientes</h1>
-<div id="table">
-<div class="table-responsive">
+
+<div id="table" class="table-responsive">
         <table class="table">
 
         <thead>
@@ -114,7 +114,7 @@
             <td class="text-center"><?php echo $rowPaciente['dni']; ?></td>
             <td class="text-center"><span class="<?php if ($rowIngreso['estado'] == "No Atendido"){?>badge rounded-pill text-bg-warning<?php } else {?>badge rounded-pill text-bg-success<?php } ?>"><?php echo $rowIngreso['estado']; ?></span></td>
             <td class="text-center"><span class="<?php if ($rowIngreso['emergencia'] == "0"){?>badge rounded-pill text-bg-secondary<?php } else {?>badge rounded-pill text-bg-danger<?php } ?>"><?php if ($rowIngreso['emergencia'] == 0) { echo "Normal"; } else { echo "Emergencia"; } ?></span></td>
-            <td class="text-center"><?php echo date("d/m/Y H:m:s", strtotime($rowIngreso['fecha'])); ?></td>
+            <td class="text-center"><?php echo date("d/m/Y H:i:s", strtotime($rowIngreso['fecha'])); ?></td>
             <td class="text-center"><?php echo $rowEnfermero['nombre']; ?></td>
             <td class="text-center">
                 <?php if (isset($_SESSION['idRol']) && ($_SESSION['idRol']==2)) { ?>
@@ -130,12 +130,14 @@
                 $ct++;
                 endwhile; 
             ?>
-        </div>
+        
         </tbody>
+        
         </table>
+       
 </div>
 <script>
-    $('.btn-edit-paciente').click(function(){
+    $('#table').on('click', '.btn-edit-paciente', function() {
         var idIngreso = $(this).data('id');
         $('#idIngresoInput').val(idIngreso);
         $('#titulo').text("I - " + idIngreso);

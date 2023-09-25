@@ -17,7 +17,7 @@
 </head>
 
 
-<body class="col-12">
+<body class="col-12" id="fondoGeneral">
 <?php include "./inc/navbar.php";?>
 
 <div id="content">

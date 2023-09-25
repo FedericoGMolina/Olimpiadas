@@ -38,7 +38,7 @@ $fecha = date("Y-m-d H:i:s");
         $sqlUltimaId = Mysql::consulta("SELECT MAX(idPersona) AS ultimaId FROM persona");
         $ultimaId = mysqli_fetch_assoc($sqlUltimaId)["ultimaId"];
         $idPersona = $ultimaId + 1;
-        if (!MysqlQuery::Guardar("persona", "idPersona, dni, nombre, apellido, idObraSocial, cp, fechaNac, domicilio, genero", "'$idPersona', '$dni', '$nombre', '$apellido', '$obraSocial', '$cp', '$fechaNac', '$domicilio', '$geneSro'"))
+        if (!MysqlQuery::Guardar("persona", "idPersona, dni, nombre, apellido, idObraSocial, cp, fechaNac, domicilio, genero", "'$idPersona', '$dni', '$nombre', '$apellido', '$obraSocial', '$cp', '$fechaNac', '$domicilio', '$genero'"))
         {
             echo 'ERROR';
             exit;
