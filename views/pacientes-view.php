@@ -35,9 +35,28 @@
                         <div class="col-12" id="inputModel">
                             <input type="text" class="form-control mt-3" name="legajoEnfermero" id="legajoEnfermero">
                         </div>
-                        <div class="col-12" id="inptuModel">
-                            <input type="text" class="form-control mt-3" name="enfermeroIngreso" id="enfermeroIngreso">
-                        </div>
+                        <div class="col-md-4">
+                    <div class="input-group mb-3" id="tIngresobox">
+                        <span class="input-group-text" id="basic-addon2">Zona</span>
+                        <?php
+                            $mysqli = mysqli_connect(SERVER, USER, PASS, BD);
+                            mysqli_set_charset($mysqli, "utf8");
+                            $consultaZona="SELECT SQL_CALC_FOUND_ROWS * FROM zona";
+                            $selZona=mysqli_query($mysqli,$consultaZona);
+                        ?>
+                        <select class="form-select mx-auto text-center" name="zonaPaciente" id="zonaPaciente" >
+                            <?php           
+                                while ($row=mysqli_fetch_array($selZona, MYSQLI_ASSOC)): 
+                            ?>
+                            <option value="<?php echo $row['idZona']; ?>"><?php echo $row['nombreZona']; ?></option>
+                                                                            
+                            <?php
+                                endwhile; 
+                            ?>
+
+                        </select>
+                    </div>
+                </div>
                         <div class="col-12 mt-4">
 
                         <div class="input-group">
@@ -50,7 +69,10 @@
                                 <span class="input-group-text">Observación</span>
                                 <textarea class="form-control" aria-label="Diagnóstico" name="observacionIngreso" id="observacionIngreso"></textarea>
                         </div>
-
+                                    <h5> Historial de atenciones </h5>
+                                    <hr>
+                        <ul id="historial"></ul>
+                        <hr>
                     </div>
 
                     <!-- Pie del modal -->
@@ -175,6 +197,8 @@
                     $('#estadoIngreso').text(data.estado);
                     $('#observacionIngreso').text(data.observacion);
                     $('#diagnosticoIngreso').text(data.diagnostico);
+                    cargarHistorialDeCambios(idIngreso);
+
                 }
             },
             error: function() {
@@ -190,11 +214,11 @@
         var idIngreso = document.getElementById('idIngresoInput').value;
         var diagnostico = document.getElementById('diagnosticoIngreso').value;
         var observacion = document.getElementById('observacionIngreso').value;
-
+        var idZona = document.getElementById('zonaPaciente').value;
         $.ajax({
             url: "./process/ingreso/actualizarDatos.php", // Archivo PHP para la consulta a la base de datos
             method: "POST",
-            data: { idIngreso, diagnostico, observacion },
+            data: { idIngreso, diagnostico, observacion, idZona },
             dataType: "json",
             success: function(data) {
                 Swal.fire(
@@ -215,6 +239,53 @@
     setInterval(function() {
   $('#table').load(location.href + ' #table');
 }, 10000);
+
+const historialList = document.getElementById("historial");
+
+    // Función para cargar el historial de cambios mediante una solicitud AJAX
+    function cargarHistorialDeCambios(idIngreso) {
+        $.ajax({
+            url: "./process/ingreso/cargarHistorialDeCambios.php", // Cambia esto a la URL de tu script o API que obtiene los datos
+            method: "GET", // Puedes usar GET o POST según tus necesidades
+            data: { idIngreso: idIngreso }, // Pasa el ID del paciente como parámetro
+            dataType: "json",
+            success: function (data) {
+                // Limpia el historial existente
+                historialList.innerHTML = "";
+
+                // Itera sobre los datos y agrega cada cambio al historial
+                data.forEach(cambio => {
+                    const listItem = document.createElement("li");
+                    const fechaCambio = new Date(cambio.fecha);
+                        const opcionesFormato = {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        };
+                        const fechaFormateada = fechaCambio.toLocaleDateString('es-ES', opcionesFormato);
+                    listItem.textContent = `Actualización: ${fechaFormateada}`;
+                    listItem.style.cursor = "pointer";
+                   
+                    
+                    // Agrega un evento clic para mostrar los detalles del cambio al hacer clic en el elemento de la lista
+                    listItem.addEventListener("click", () => {
+                        // Aquí puedes mostrar los detalles del cambio como prefieras
+                        
+
+                        alert(`Detalles del Cambio:\nFecha: ${fechaFormateada}\nDescripción: ${cambio.descripcion}\nDetalles: ${cambio.detalles}`);
+                    });
+
+                    historialList.appendChild(listItem);
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
+
 </script>
 
 

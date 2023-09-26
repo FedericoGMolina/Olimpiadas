@@ -1,10 +1,8 @@
 <?php
-
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "mhs";
-
 
 $conn = new mysqli($servername, $username, $password, $database);
 
@@ -12,39 +10,45 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-
 $idIngreso = $_POST['idIngreso'];
 $diagnostico = $_POST['diagnostico'];
 $observacion = $_POST['observacion'];
+$idZona = $_POST['idZona'];
 
+$conn->begin_transaction();
 
-$sql = "UPDATE ingreso SET diagnostico = ?, observacion = ? WHERE idIngreso = ?";
+try {
+    $updateSql = "UPDATE ingreso SET diagnostico = ?, observacion = ? WHERE idIngreso = ?";
+    $updateStmt = $conn->prepare($updateSql);
+    $updateStmt->bind_param("ssi", $diagnostico, $observacion, $idIngreso);
 
-$stmt = $conn->prepare($sql);
+    if ($updateStmt->execute()) {
+        $informeSql = "INSERT INTO informe (idIngreso, diagnostico, idZona) VALUES (?, ?, ?)";
+        $informeStmt = $conn->prepare($informeSql);
+        $informeStmt->bind_param("iss", $idIngreso, $diagnostico, $idZona);
 
-if ($stmt) {
-
-    $stmt->bind_param("sss", $diagnostico, $observacion, $idIngreso);
-
-    // Ejecutar la sentencia SQL
-    if ($stmt->execute()) {
-        // La actualización fue exitosa
-        $response = array('success' => true);
-        echo json_encode($response);
+        if ($informeStmt->execute()) {
+            $conn->commit();
+            $response = array('success' => true);
+            echo json_encode($response);
+        } else {
+            $conn->rollback();
+            $response = array('success' => false, 'message' => 'Error en la inserción en la tabla "informe"');
+            echo json_encode($response);
+        }
     } else {
-        // Hubo un error en la actualización
-        $response = array('success' => false, 'message' => 'Error en la actualización');
+        $conn->rollback();
+        $response = array('success' => false, 'message' => 'Error en la actualización en la tabla "ingreso"');
         echo json_encode($response);
     }
 
-    // Cerrar la sentencia preparada
-    $stmt->close();
-} else {
-    // Hubo un error en la preparación de la sentencia SQL
-    $response = array('success' => false, 'message' => 'Error en la preparación de la sentencia SQL');
+    $updateStmt->close();
+    $informeStmt->close();
+} catch (Exception $e) {
+    $conn->rollback();
+    $response = array('success' => false, 'message' => 'Error: ' . $e->getMessage());
     echo json_encode($response);
 }
 
-// Cerrar la conexión a la base de datos
 $conn->close();
 ?>
