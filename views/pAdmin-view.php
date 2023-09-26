@@ -34,21 +34,21 @@ if (isset($_SESSION['idRol'])) {
                 <table class="table text-center">
                     <thead>
                         <tr>
-                            <th scope="col">CREO</th>
-                            <th scope="col">QUE</th>
-                            <th scope="col">FUNCA</th>
+                            <th scope="col">Test "Cargos"</th>
+                            <th scope="col">Test "Cargos"</th>
+                            <th scope="col">Test "Cargos"</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Cuba</td>
-                            <td>Bahia</td>
-                            <td>Brasil (Decime que se siente)</td>
+                            <td>Testeando..."Cargos"</td>
+                            <td>Testeando..."Cargos"</td>
+                            <td>Testeando..."Cargos"</td>
                         </tr>
                         <tr>
-                            <td>Red Dragon</td>
-                            <td>Shikibukai</td>
-                            <td>Taladro</td>
+                            <td>Testeando..."Cargos"</td>
+                            <td>Testeando..."Cargos"</td>
+                            <td>Testeando..."Cargos"</td>
                         </tr>
                     </tbody>
                 </table>
@@ -60,25 +60,25 @@ if (isset($_SESSION['idRol'])) {
         </div>
 
         <div id="zonas">
-            <div class="table-responsive">
+        <div class="table-responsive">
                 <table class="table text-center">
                     <thead>
                         <tr>
-                            <th scope="col">Zona</th>
-                            <th scope="col">Enfermeros</th>
-                            <th scope="col">Pacientes</th>
+                            <th scope="col">Test "Zonas"</th>
+                            <th scope="col">Test "Zonas"</th>
+                            <th scope="col">Test "Zonas"</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Ronaldiño</td>
-                            <td>Messi</td>
-                            <td>Papa</td>
+                            <td>Testeando..."Zonas"</td>
+                            <td>Testeando..."Zonas"</td>
+                            <td>Testeando..."Zonas"</td>
                         </tr>
                         <tr>
-                            <td>Red Dragon</td>
-                            <td>Shikibukai</td>
-                            <td>Taladro</td>
+                            <td>Testeando..."Zonas"</td>
+                            <td>Testeando..."Zonas"</td>
+                            <td>Testeando..."Zonas"</td>
                         </tr>
                     </tbody>
                 </table>
@@ -90,21 +90,21 @@ if (isset($_SESSION['idRol'])) {
                 <table class="table text-center">
                     <thead>
                         <tr>
-                            <th scope="col">Localidades</th>
-                            <th scope="col">Ciudad</th>
-                            <th scope="col">Cp</th>
+                            <th scope="col">Test</th>
+                            <th scope="col">Test</th>
+                            <th scope="col">Test</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Cuba</td>
-                            <td>Bahia</td>
-                            <td>Brasil (Decime que se siente)</td>
+                            <td>Testeando..."Localidades"</td>
+                            <td>Testeando..."Localidades"</td>
+                            <td>Testeando..."Localidades"</td>
                         </tr>
                         <tr>
-                            <td>Red Dragon</td>
-                            <td>Shikibukai</td>
-                            <td>Taladro</td>
+                            <td>Testeando..."Localidades"</td>
+                            <td>Testeando..."Localidades"</td>
+                            <td>Testeando..."Localidades"</td>
                         </tr>
                     </tbody>
                 </table>
